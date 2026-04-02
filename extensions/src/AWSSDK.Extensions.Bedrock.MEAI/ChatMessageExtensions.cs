@@ -28,7 +28,7 @@ public static class ChatMessageExtensions
 	/// <remarks>
 	/// This method adds a cache point marker to the message's additional properties. Prompt caching
 	/// allows Bedrock to cache the prompt tokens for reuse in subsequent requests, reducing costs
-	/// and latency. The model must support prompt caching and the message must be within the minimum token threshold for caching.
+	/// and latency. The model must support prompt caching and the message must be meet or exceed the minimum token threshold.
 	/// </remarks>
 	public static ChatMessage UsePromptCaching(this ChatMessage message, CacheTTL? cacheTTL = null)
 	{
