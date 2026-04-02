@@ -32,6 +32,11 @@ public static class ChatMessageExtensions
 	/// </remarks>
 	public static ChatMessage UsePromptCaching(this ChatMessage message, CacheTTL? cacheTTL = null)
 	{
+		if (message is null)
+		{
+			throw new ArgumentNullException(nameof(message));
+		}
+
 		cacheTTL ??= CacheTTL.FIVE_MINUTES;
 		message.AdditionalProperties ??= [];
 
