@@ -40,7 +40,7 @@ public static class ChatMessageExtensions
 		cacheTTL ??= CacheTTL.FIVE_MINUTES;
 		message.AdditionalProperties ??= [];
 
-		message.AdditionalProperties.Add(nameof(ContentBlock.CachePoint), new CachePointBlock { Type = CachePointType.Default, Ttl = cacheTTL });
+		message.AdditionalProperties[nameof(ContentBlock.CachePoint)] = new CachePointBlock { Type = CachePointType.Default, Ttl = cacheTTL };
 
 		return message;
 	}
